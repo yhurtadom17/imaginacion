@@ -29,36 +29,51 @@
       color: #cce7ff;
     }
 
+    .team {
+      text-align: center;
+      margin: 1.5rem auto;
+      padding: 1rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid #00ffe7;
+      border-radius: 15px;
+      max-width: 700px;
+      box-shadow: 0 0 20px rgba(0,255,231,0.4);
+    }
+
+    .team h2 {
+      color: #00ffe7;
+    }
+
     /* Carrusel futurista */
     .carousel {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-    border-bottom: 3px solid #00ffe7;
-    box-shadow: 0 0 30px #00ffe7;
-  }
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      border-bottom: 3px solid #00ffe7;
+      box-shadow: 0 0 30px #00ffe7;
+    }
 
-  .carousel-track {
-    display: flex;
-    width: 100%; /* 4 imágenes → 100% cada una */
-    animation: slide 16s infinite;
-  }
+    .carousel-track {
+      display: flex;
+      width: 100%;
+      animation: slide 16s infinite;
+    }
 
-  .carousel img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    flex-shrink: 0;
-  }
+    .carousel img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
 
-  @keyframes slide {
-    0%, 20%   { transform: translateX(0); }
-    25%, 40%  { transform: translateX(-100%); }
-    45%, 65%  { transform: translateX(-200%); }
-    70%, 90%  { transform: translateX(-300%); }
-    100%      { transform: translateX(0); }
-  }
+    @keyframes slide {
+      0%, 20%   { transform: translateX(0); }
+      25%, 40%  { transform: translateX(-100%); }
+      45%, 65%  { transform: translateX(-200%); }
+      70%, 90%  { transform: translateX(-300%); }
+      100%      { transform: translateX(0); }
+    }
 
     /* Línea de tiempo futurista */
     .timeline {
@@ -112,6 +127,21 @@
 
     .qr:hover { transform: rotate(10deg) scale(1.1); }
 
+    .analysis {
+      margin: 3rem auto;
+      max-width: 900px;
+      padding: 2rem;
+      background: rgba(255,255,255,0.07);
+      border: 2px solid #00ffe7;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0,255,231,0.5);
+    }
+
+    .analysis h2 {
+      text-align: center;
+      color: #00ffe7;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -119,54 +149,95 @@
       border-top: 2px solid #00ffe7;
       box-shadow: 0 -5px 20px #00ffe7;
     }
+
+    /* 🔹 RESPONSIVE DESIGN */
+    @media (max-width: 992px) {
+      header h1 { font-size: 2.5rem; }
+      header p { font-size: 1rem; }
+      .carousel, .carousel img { height: 300px; }
+    }
+
+    @media (max-width: 768px) {
+      .timeline::before { left: 8px; } /* línea a la izquierda */
+      .section {
+        width: 90%;
+        left: 0 !important;
+        margin-left: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 2rem; }
+      .team { font-size: 0.9rem; padding: 0.8rem; }
+      .carousel, .carousel img { height: 200px; }
+      .section { width: 95%; margin-left: 1rem; padding: 1rem; }
+      .analysis { padding: 1rem; font-size: 0.9rem; }
+    }
   </style>
 </head>
+
 <body>
 
   <header>
-    <h1>Evolución Automotriz en LATAM</h1>
+    <h1>¿Cómo serán los autos en 30 años en Latinoamérica?</h1>
     <p>Un recorrido futurista hacia la movilidad del mañana</p>
   </header>
 
+  <!-- Equipo de trabajo -->
+  <div class="team">
+    <h2>Equipo de Trabajo</h2>
+    <p><strong>Integrantes:</strong> <br>
+        <br> Yesid Montoya  <br> Valentina Giraldo <br> Jorge Cardona <br> Jacobo Areiza <br> Juan José Tabares</p>
+  </div>
+ 
+  <br><br><br>
   <!-- Carrusel -->
   <div class="carousel">
     <div class="carousel-track">
       <img src="https://img.freepik.com/foto-gratis/supercoche-futurista_23-2151955613.jpg?w=740" alt="Carro futurista 1">
       <img src="https://img.freepik.com/fotos-premium/coche-electrico-urbano-compacto-forma-redondeada-elegante-ventanas-grandes-caracteristicas-minimalistas-presente_1297101-57905.jpg?semt=ais_hybrid&w=740&q=80" alt="Carro futurista 2">
-      <img src="https://png.pngtree.com/background/20230527/original/pngtree-futuristic-racing-car-in-abstract-frame-picture-image_2758369.jpg" alt="Carro futurista 3">
+      <img src="https://hips.hearstapps.com/es.h-cdn.co/cades/contenidos/52837/ds-x_e-tense_concept-2018-1600-01.jpg?crop=0.99125xw:1xh;center,top&resize=640:*" alt="Carro futurista 3">
       <img src="https://png.pngtree.com/thumb_back/fh260/background/20250512/pngtree-futuristic-silver-car-with-gull-wing-doors-illuminated-accents-and-a-image_17265457.jpg" alt="Carro futurista 4">
     </div>
   </div>
-
+ <br><br><br>
   <!-- Línea de tiempo -->
   <div class="timeline">
     <div class="section">
       <h2>Mapa de Eras</h2>
-      <p>A inicios del siglo XX, la industria automotriz en LATAM se basaba en la importación...</p>
-      <a href="comic1.html"><img src="https://i.ibb.co/VWpVvgh/qr.png" alt="QR" class="qr"></a>
+      <p>La industria automotriz en LATAM pasó de depender casi por completo de importaciones extranjeras a desarrollar plantas locales de ensamblaje, especialmente en Brasil, México y Argentina. Aunque el avance fue significativo, la dependencia de combustibles fósiles y tecnologías foráneas se mantuvo. Con la globalización, se diversificaron las marcas, pero también aumentó la competencia internacional, preparando el terreno para la transición que vemos hoy.</p>
+      <a href="comic1.html"><img src="comic1.png" alt="QR" class="qr"></a>
     </div>
 
     <div class="section">
       <h2>Drivers de cambio y Anclas</h2>
-      <p>Anclas: la industria se sostiene en la venta de autos de combustión interna...</p>
-      <a href="comic2.html"><img src="https://i.ibb.co/VWpVvgh/qr.png" alt="QR" class="qr"></a>
+      <p>Mientras las anclas siguen siendo los autos de combustión interna, la infraestructura tradicional y la cultura de propiedad individual, los drivers abren paso al cambio: nuevas políticas ambientales, el surgimiento de una clase media con más poder adquisitivo, la urbanización acelerada y la llegada de tecnología disruptiva (IA, conectividad, baterías). Este choque entre pasado y futuro marca la tensión que vive la región.</p>
+      <a href="comic2.html"><img src="comic2.png" alt="QR" class="qr"></a>
     </div>
 
     <div class="section">
       <h2>Tendencias actuales (PESTEL)</h2>
-      <p>Político: se promueve la electromovilidad con incentivos fiscales...</p>
-      <a href="comic3.html"><img src="https://i.ibb.co/VWpVvgh/qr.png" alt="QR" class="qr"></a>
+      <p>Los países de LATAM avanzan con incentivos para autos eléctricos, aunque la inestabilidad política y económica frena el proceso. Las tendencias sociales y ambientales empujan hacia una movilidad compartida y sostenible, mientras que la tecnología habilita autos conectados, semi-autónomos y con mejor rendimiento energético. Sin embargo, los desafíos legales y regulatorios muestran que aún falta un marco sólido para consolidar el cambio.</p>
+      <a href="comic3.html"><img src="comic3.png" alt="QR" class="qr"></a>
     </div>
 
     <div class="section">
       <h2>Principales Señales</h2>
-      <p>Aumento de híbridos y eléctricos en concesionarios de LATAM...</p>
-      <a href="comic4.html"><img src="https://i.ibb.co/VWpVvgh/qr.png" alt="QR" class="qr"></a>
+      <p>La electrificación ya no es un futuro lejano: México, Brasil, Chile y Colombia lideran con la adopción de eléctricos e híbridos. Se expanden las redes de carga y los centros de investigación, mientras que los jóvenes priorizan el uso sobre la propiedad. Además, los vehículos empiezan a ser plataformas de datos, conectando al ecosistema digital y energético. Estas señales anticipan un cambio estructural en el modelo de movilidad de LATAM.</p>
+      <a href="comic4.html"><img src="comic4.png" alt="QR" class="qr"></a>
     </div>
+  </div>
+ <br><br>
+  <!-- Análisis profundo -->
+  <div class="analysis">
+    <h2>Conclusión</h2>
+    <p>La evolución de la industria automotriz en Latinoamérica es el reflejo de un proceso de transición marcado por tensiones entre el legado histórico y las demandas del futuro. Por un lado, persisten las anclas: una fuerte dependencia de combustibles fósiles, infraestructura vial tradicional y un modelo cultural centrado en la propiedad del vehículo. Por el otro, los drivers y señales empujan hacia un escenario disruptivo donde la electromovilidad, la conectividad digital, la sostenibilidad y la movilidad compartida serán ejes dominantes.</p>
+    <p>El análisis PESTEL revela que la región tiene un ecosistema en formación, con avances notables en tecnología y regulación, aunque todavía limitado por inestabilidades económicas y falta de marcos legales claros. La competencia internacional, especialmente de marcas chinas, acelera la transición al ofrecer alternativas accesibles, lo que reduce la brecha tecnológica.</p>
+    <p>En síntesis, LATAM se encuentra en una encrucijada: si logra alinear políticas públicas, inversión privada y conciencia social, podría posicionarse como líder emergente en movilidad sostenible. De lo contrario, corre el riesgo de quedar rezagada frente a otras regiones. El futuro dependerá de cómo la región gestione esta tensión entre continuidad y transformación.</p>
   </div>
 
   <footer>
-    <p>© 2025 Evolución Automotriz LATAM | Línea de tiempo futurista</p>
+    <p>© 2025 Evolución Automotriz LATAM</p>
   </footer>
 
 </body>
